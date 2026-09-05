@@ -48,7 +48,9 @@ if(agent==='codex') {
 } else {
  bin='agent';args=['-p','--auto-review','--sandbox','enabled','--trust','--workspace',work,'--output-format','json',prompt];
 }
+const version=spawnSync(bin,['--version'],{cwd:work,encoding:'utf8',timeout:10000});
 const result=spawnSync(bin,args,{cwd:work,encoding:'utf8',timeout:240000,maxBuffer:8*1024*1024});
+writeFileSync(join(work,phase+'.run.json'),JSON.stringify({agent,phase,version:version.stdout?.trim(),checkedAt:new Date().toISOString(),status:result.status},null,2));
 writeFileSync(join(work,phase+'.stdout'),result.stdout??'');
 writeFileSync(join(work,phase+'.stderr'),result.stderr??'');
 for(const file of ['AGENTS.md','CLAUDE.md']) copyFileSync(join(work,file),join(work,phase+'.'+file));
