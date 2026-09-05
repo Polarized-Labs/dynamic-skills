@@ -2,12 +2,18 @@
 
 Validated on 2026-09-05 for the initial 0.1.0 release.
 
+Version 0.1.1 renames the repository and skill identifier to `dynamic-skills`,
+including the folder, display name, invocation prompt, install commands, and
+test paths. The workflow instructions are unchanged. The behavioral evidence
+below is from 0.1.0; metadata and CLI installation are checked again for the
+renamed skill by the release's GitHub Actions run.
+
 ## Distribution and structure
 
-- MIT-licensed public source: [Polarized-Labs/setup-team-guidance](https://github.com/Polarized-Labs/setup-team-guidance).
+- MIT-licensed public source: [Polarized-Labs/dynamic-skills](https://github.com/Polarized-Labs/dynamic-skills).
 - Frontmatter and Codex interface metadata pass YAML validation.
 - All five synthetic connector contract checks pass.
-- [GitHub Actions](https://github.com/Polarized-Labs/setup-team-guidance/actions/runs/33993970380)
+- [GitHub Actions](https://github.com/Polarized-Labs/dynamic-skills/actions/runs/33993970380)
   installed the skill through skills CLI 1.5.23 from both the checkout and the
   public repository for Claude Code, Codex, and Cursor. Installed SKILL.md and
   agents/openai.yaml matched the source at both agent locations.

@@ -1,14 +1,14 @@
 ---
-name: setup-team-guidance
+name: dynamic-skills
 description: "Create or update an agent instruction index pointing to the team's Playbooks and References section in its collaboration software. Use when setting up team best practices or refreshing those document links."
 license: MIT
 compatibility: "Requires authorized access to the team's collaboration software and a supported agent instruction entry point. Linear is the first documented example; use an existing connector or authenticated browser."
 metadata:
   author: "Polarized Lab"
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
-# Set up team guidance
+# Dynamic Skills
 
 Keep team best practices in the collaboration software where people maintain
 them. Give agents a short index of the relevant source documents.

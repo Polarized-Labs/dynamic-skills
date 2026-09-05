@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dynamic Skills"
+  short_description: "Point agents to team playbooks and reference documents"
+  default_prompt: "Use $dynamic-skills to find our Playbooks and References section and set up a concise index for our agent instructions."

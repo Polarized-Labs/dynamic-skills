@@ -1,4 +1,4 @@
-# Set up team guidance
+# Dynamic Skills
 
 An open-source skill from Polarized Lab that connects agents to the team's
 existing best practices. The documents stay in your collaboration software;
@@ -9,13 +9,13 @@ the agent maintains a short index of links and when to read them.
 Run in the project where you want to use the skill:
 
 ```sh
-npx skills add Polarized-Labs/setup-team-guidance --skill setup-team-guidance
+npx skills add Polarized-Labs/dynamic-skills --skill dynamic-skills
 ```
 
 To select the three initial targets explicitly:
 
 ```sh
-npx skills add Polarized-Labs/setup-team-guidance --skill setup-team-guidance -a claude-code -a codex -a cursor
+npx skills add Polarized-Labs/dynamic-skills --skill dynamic-skills -a claude-code -a codex -a cursor
 ```
 
 The existing [skills CLI](https://skills.sh/docs/cli) handles installation.
@@ -28,7 +28,7 @@ scope that fits your environment and managed configuration.
 Give your agent access to your collaboration tool using its existing connector
 or authenticated browser. Then ask:
 
-> Use setup-team-guidance to find the “Playbooks and References” section
+> Use dynamic-skills to find the “Playbooks and References” section
 > for our team and set up a guidance index for this project.
 
 Specify your workspace, team, and target agents if they are not already known.
@@ -72,8 +72,8 @@ collaboration tool nor publishes your documents.
 
 ## Contribute
 
-Edit [SKILL.md](skills/setup-team-guidance/SKILL.md) for behavior and
-[openai.yaml](skills/setup-team-guidance/agents/openai.yaml) for optional Codex
+Edit [SKILL.md](skills/dynamic-skills/SKILL.md) for behavior and
+[openai.yaml](skills/dynamic-skills/agents/openai.yaml) for optional Codex
 display metadata. Keep the skill focused on setup and reference maintenance.
 Test changes with the scenarios in [tests/README.md](tests/README.md), and report
 the agent versions and source-access method. Use synthetic examples in issues

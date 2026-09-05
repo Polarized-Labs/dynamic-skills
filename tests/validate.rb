@@ -1,6 +1,6 @@
 require "yaml"
 root = File.expand_path("..", __dir__)
-dir = File.join(root, "skills", "setup-team-guidance")
+dir = File.join(root, "skills", "dynamic-skills")
 text = File.read(File.join(dir, "SKILL.md"))
 frontmatter = text.match(/\A---\n(.*?)\n---\n/m) or abort "Missing YAML frontmatter"
 data = YAML.safe_load(frontmatter[1])

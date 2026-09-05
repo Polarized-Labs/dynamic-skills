@@ -1,4 +1,0 @@
-interface:
-  display_name: "Set up team guidance"
-  short_description: "Point agents to team playbooks and reference documents"
-  default_prompt: "Use $setup-team-guidance to find our Playbooks and References section and set up a concise index for our agent instructions."
