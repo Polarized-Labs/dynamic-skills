@@ -34,3 +34,40 @@ node --test tests/fixture.test.mjs
 Live agent evaluation commands and observed results are recorded in
 `tests/results.md`. Local fixture results do not establish live Linear
 authentication, GUI compatibility, or ax cloud execution.
+
+## Run agent checks
+
+Use existing authenticated CLIs; the harness does not install them. Runs create
+ignored `.eval/<agent>` workspaces, copy the skill there, and expose only
+synthetic guidance through a local connector. Each agent runs its normal model.
+The fixture's three read-only tools are approved for these test runs. Cursor
+gets a separate Git root and its `collaboration` server is enabled explicitly.
+
+Starting with a clean test workspace, run these phases in order for each of
+`codex`, `claude`, and `cursor`:
+
+```sh
+node tests/run-agent.mjs codex setup
+node tests/run-agent.mjs codex repeat
+node tests/run-agent.mjs codex read
+node tests/run-agent.mjs codex updated
+node tests/run-agent.mjs codex denied
+```
+
+Missing-section and unclear-scope checks use separate fresh workspaces:
+
+```sh
+node tests/run-agent.mjs codex missing
+node tests/run-agent.mjs codex ambiguous
+node tests/check-behavior.mjs
+```
+
+The assertions inspect actual document calls, answers, and generated indexes.
+Also review the generated instructions and each final response for source
+accuracy, clear limitations, and duplicate sections. This is a bounded release
+sample, not a statistical reliability evaluation. Raw agent logs stay ignored
+because they can include local environment information.
+
+GitHub Actions separately tests installation using the real skills CLI from
+both the checkout and the public repository. Manual copying in the behavioral
+harness does not count as a CLI installation test.

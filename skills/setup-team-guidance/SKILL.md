@@ -30,7 +30,8 @@ report it; do not infer an empty source or silently use unrelated sections.
 Collect verified section and document URLs. Use titles, descriptions, headings,
 and enough content to write an accurate sentence about when to read each
 document. Deduplicate by document identity or canonical URL, retaining section
-context. Keep the guidance bodies in the source tool.
+context: list each document once and note all of its source sections on that
+entry. Keep the guidance bodies in the source tool.
 
 ## Add the reference index
 
