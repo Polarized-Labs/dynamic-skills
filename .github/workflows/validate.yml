@@ -1,0 +1,27 @@
+name: Validate skill
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate metadata
+        run: ruby tests/validate.rb
+      - name: Check the synthetic collaboration fixture
+        run: node --test tests/fixture.test.mjs
+      - name: Install through the skills CLI
+        env:
+          DISABLE_TELEMETRY: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/guidance-install"
+          cd "$RUNNER_TEMP/guidance-install"
+          npx --yes skills@1.5.23 add "$GITHUB_WORKSPACE" --skill setup-team-guidance -a claude-code -a codex -a cursor --yes
+          node "$GITHUB_WORKSPACE/tests/check-install.mjs" "$RUNNER_TEMP/guidance-install" "$GITHUB_WORKSPACE"

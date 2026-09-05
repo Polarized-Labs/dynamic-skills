@@ -1,0 +1,54 @@
+{
+  "sections": [
+    {
+      "id": "team-guidance",
+      "name": "Playbooks and References",
+      "url": "https://docs.example.test/northstar/team-guidance",
+      "documents": [
+        "releases",
+        "travel"
+      ]
+    },
+    {
+      "id": "more-guidance",
+      "name": "playbooks and references",
+      "url": "https://docs.example.test/northstar/more-guidance",
+      "documents": [
+        "releases"
+      ]
+    },
+    {
+      "id": "unrelated",
+      "name": "Other documents",
+      "url": "https://docs.example.test/northstar/other",
+      "documents": [
+        "unrelated"
+      ]
+    }
+  ],
+  "documents": {
+    "releases": {
+      "id": "releases",
+      "title": "Release approvals",
+      "description": "Read when preparing a release or identifying its required approval.",
+      "url": "https://docs.example.test/northstar/release-approvals",
+      "body": "Every production release needs approval from the release captain. The current approval marker is PINE-47."
+    },
+    "travel": {
+      "id": "travel",
+      "title": "Travel booking",
+      "description": "Read when booking travel.",
+      "url": "https://docs.example.test/northstar/travel",
+      "body": "Travel uses booking marker CEDAR-92."
+    },
+    "unrelated": {
+      "id": "unrelated",
+      "title": "Unrelated material",
+      "description": "Outside the guidance section.",
+      "url": "https://docs.example.test/northstar/unrelated",
+      "body": "Not team guidance."
+    }
+  },
+  "denied": [],
+  "unavailable": false
+}
