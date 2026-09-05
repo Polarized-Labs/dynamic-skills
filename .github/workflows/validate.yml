@@ -25,3 +25,12 @@ jobs:
           cd "$RUNNER_TEMP/guidance-install"
           npx --yes skills@1.5.23 add "$GITHUB_WORKSPACE" --skill setup-team-guidance -a claude-code -a codex -a cursor --yes
           node "$GITHUB_WORKSPACE/tests/check-install.mjs" "$RUNNER_TEMP/guidance-install" "$GITHUB_WORKSPACE"
+      - name: Install from the public repository
+        if: github.event_name != 'pull_request'
+        env:
+          DISABLE_TELEMETRY: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/public-guidance-install"
+          cd "$RUNNER_TEMP/public-guidance-install"
+          npx --yes skills@1.5.23 add Polarized-Labs/setup-team-guidance --skill setup-team-guidance -a claude-code -a codex -a cursor --yes
+          node "$GITHUB_WORKSPACE/tests/check-install.mjs" "$RUNNER_TEMP/public-guidance-install" "$GITHUB_WORKSPACE"
