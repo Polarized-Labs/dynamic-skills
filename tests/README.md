@@ -25,11 +25,16 @@ alone is not acceptance.
 documents and logs calls, allowing behavior to be checked without exposing or
 changing a real team's guidance. It is not distributed inside the skill.
 
-Run the fixture contract checks with:
+Use Node.js 22 or newer. Install the development dependencies and run metadata
+validation, validator regression tests, and fixture contract checks with:
 
 ```sh
-node --test tests/fixture.test.mjs
+npm ci
+npm test
 ```
+
+The YAML parser is a development dependency used only by the metadata validator.
+It is not part of the distributed skill. Ruby is no longer needed for validation.
 
 Live agent evaluation commands and observed results are recorded in
 `tests/results.md`. Local fixture results do not establish live Linear
