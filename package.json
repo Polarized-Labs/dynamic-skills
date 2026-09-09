@@ -1,0 +1,14 @@
+{
+  "name": "dynamic-skills",
+  "private": true,
+  "scripts": {
+    "validate": "node tests/validate.mjs",
+    "test": "npm run validate && node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "yaml": "2.9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
