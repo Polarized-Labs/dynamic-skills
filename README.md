@@ -1,82 +1,48 @@
 # Dynamic Skills
 
-An open-source skill from Polarized Lab that connects agents to the team's
-existing best practices. The documents stay in your collaboration software;
-the agent maintains a short index of links and when to read them.
+**Give your agent the team playbook.**
 
-## Install
+Your team's best practices deserve a life beyond “it's in the docs.”
 
-Run in the project where you want to use the skill:
+Dynamic Skills gives coding agents a short index of your team's guidance:
+what to read and when. Your docs stay where your team edits them.
+
+Built for **Claude Code, Codex, and Cursor**. Open source by Polarized Lab.
+
+## Get started
+
+Run this in your project and choose your agents:
 
 ```sh
 npx skills add Polarized-Labs/dynamic-skills --skill dynamic-skills
 ```
 
-To select the three initial targets explicitly:
+Give your agent access to your collaboration tool through an existing connector
+or authenticated browser. Keep your team's guidance in a section named
+**Playbooks and References**, then ask:
 
-```sh
-npx skills add Polarized-Labs/dynamic-skills --skill dynamic-skills -a claude-code -a codex -a cursor
-```
+> Use dynamic-skills to find our team's “Playbooks and References” section
+> and set up a guidance index for this project.
 
-The existing [skills CLI](https://skills.sh/docs/cli) handles installation.
-This repository does not ship a CLI or a background sync process.
-A global install is available with the upstream `--global` option; choose the
-scope that fits your environment and managed configuration.
+Include your workspace and team if your agent doesn't already know them.
+For a sneak peek, add “draft the index without changing files.”
 
-## Use
+Linear is the first documented example; other tools can use an equivalent
+named collection.
 
-Give your agent access to your collaboration tool using its existing connector
-or authenticated browser. Then ask:
+## Your docs do the teaching
 
-> Use dynamic-skills to find the “Playbooks and References” section
-> for our team and set up a guidance index for this project.
+- **Relevant guidance.** The index tells agents which docs to read for each task.
+- **Fresh from the source.** Agents are instructed to read the original docs.
+  Refresh the index when links or topics change.
+- **Fits right in.** Adds guidance to your agent's instruction files while
+  preserving existing instructions and avoiding duplicates.
 
-Specify your workspace, team, and target agents if they are not already known.
-For a preview, say “draft the index without changing files.”
+Keep private docs and filled indexes in your own environment. Installing the
+skill doesn't grant document access or publish your guidance.
 
-The section name is **Playbooks and References**: one name, matched without
-regard to case. Multiple matching sections in the selected team scope are
-supported. Missing or inaccessible sections are reported rather than replaced
-with unrelated sources. Linear is the first documented example; the skill can
-use an equivalent named collection in another tool.
+[Skill instructions](skills/dynamic-skills/SKILL.md) ·
+[Install options](https://skills.sh/docs/cli) ·
+[Validation & contributing](tests/README.md) · [MIT license](LICENSE)
 
-The skill creates a concise **Team guidance** section containing source links
-and task-specific routing descriptions. It preserves existing instructions and
-avoids duplicate entries. Full documents remain in the collaboration tool.
-Agents read them when needed, so source edits do not require a custom sync step.
-
-## Agent instruction files
-
-| Agent | Project instruction entry point |
-| --- | --- |
-| Codex | `AGENTS.md` |
-| Cursor | `AGENTS.md` |
-| Claude Code | `CLAUDE.md`; import a shared index with a standalone `@AGENTS.md` line |
-
-A link is not access, and instructions are not a guarantee that every run will
-retrieve the right document. Check the configured connector and actual agent
-behavior. The skill reports what it could verify. See [validation](tests/README.md)
-for the release checks and their limits.
-
-References: [Agent Skills format](https://agentskills.io/specification),
-[Codex skills](https://learn.chatgpt.com/docs/build-skills),
-[Cursor rules](https://cursor.com/docs/rules),
-[Claude Code memory](https://code.claude.com/docs/en/memory).
-
-## Public skill, private guidance
-
-This repository contains reusable instructions and synthetic test data.
-Keep filled indexes, private source URLs, document exports, and credentials
-in your own environment. Installing this skill neither grants access to your
-collaboration tool nor publishes your documents.
-
-## Contribute
-
-Edit [SKILL.md](skills/dynamic-skills/SKILL.md) for behavior and
-[openai.yaml](skills/dynamic-skills/agents/openai.yaml) for optional Codex
-display metadata. Keep the skill focused on setup and reference maintenance.
-Test changes with the scenarios in [tests/README.md](tests/README.md), and report
-the agent versions and source-access method. Use synthetic examples in issues
-and pull requests.
-
-MIT licensed. No custom runtime dependencies.
+Contributions welcome. Keep examples synthetic and run the linked checks.
